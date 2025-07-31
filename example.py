@@ -1,4 +1,5 @@
 from collections import namedtuple
+from math import random
 import streamlit as st
 initial_balance = 100000
 balance = initial_balance
@@ -9,6 +10,8 @@ if(balance < minimum_bet):
     raise ValueError("Insufficient balance to place a bet.")
 total_cards = 52
 cards_in_hand = 2
+river_cards = 3
+river = [Card(random(A,2,3,4,5,6,7,8,9,10,J,Q,K), random('hearts', 'diamonds', 'clubs', 'spades')) for _ in range(river_cards)]
 
 
 
